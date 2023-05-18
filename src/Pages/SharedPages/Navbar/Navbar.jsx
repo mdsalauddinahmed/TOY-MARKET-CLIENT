@@ -4,7 +4,7 @@ import logo from '../../../../public/logo.png'
 
 const Navbar = () => {
     return (
-       < div className='bg-lime-500'>
+       < div className='bg-lime-400'>
         <div className="navbar  max-w-7xl mx-auto">
         <div className="navbar-start">
           <div className="dropdown">
@@ -27,13 +27,13 @@ const Navbar = () => {
         </div>
         <div className="navbar-end hidden lg:flex">
           <ul className="menu menu-horizontal px-1">
-            <li className='font-bold text-white'><Link to="/">Home</Link></li>
-            <li className='font-bold text-white'>
+            <li className='font-bold text-green-800'><Link to="/">Home</Link></li>
+            <li className='font-bold text-green-900'>
             <Link to="/blog">Blog</Link>
             </li>
-            <li className='font-bold text-white'><Link to="/allToys">All Toys</Link></li>
+            <li className='font-bold text-violet-600'><Link to="/allToys">All Toys</Link></li>
           
-          < li className='font-bold text-white'><Link to="/login">Login</Link></li>
+          < li className='font-bold  text-violet-600'><Link to="/login">Login</Link></li>
           </ul>
         </div>
         
