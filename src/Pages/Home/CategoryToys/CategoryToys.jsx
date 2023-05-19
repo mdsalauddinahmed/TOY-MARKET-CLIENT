@@ -13,7 +13,7 @@ const CategoryToys = () => {
             setCategoryToys(result);
           });
       }, [activeTab]);
-      console.log(categoryToys)
+     
 
 
     const handleTabClick = (tabName) => {
@@ -51,7 +51,7 @@ const CategoryToys = () => {
             </div>
           </div>
         </div>
-        <div className='grid grid-col-1 lg:grid-cols-2  pt-16 pb-16'>
+        <div className='grid grid-col-1 lg:grid-cols-3  pt-16 pb-16 border-spacing-2 border-cyan-900'>
             {
                 categoryToys?.map(toy=><Toys toy={toy} key={toy._id}></Toys>)
             }

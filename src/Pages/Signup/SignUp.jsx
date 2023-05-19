@@ -1,16 +1,18 @@
 import React from 'react';
-import { Link } from 'react-router-dom'; 
- 
+import { Link } from 'react-router-dom';
 
-const Login = () => {
-    const handleLogin=event=>{
+const SignUp = () => {
+    const handleCreateUser =event=>{
 
     }
     return (
+        
+
+
         <div className='max-w-7xl mx-auto   '>
-            <h2 className='text-center text-4xl font-bold pb-10'>Please,Login now</h2>
+            <h2 className='text-center text-4xl font-bold pb-10'>Please, SignUp</h2>
          <div className='p-46' > 
-             <form onSubmit={handleLogin}>
+             <form onSubmit={handleCreateUser}>
         
           <div className="form-control w-[50%] mx-auto py-2">
             <label className="label">
@@ -42,15 +44,10 @@ const Login = () => {
        
         
         </form>
-        <div className='w-[15%] mx-auto mb-12'>
-         <button   className='btn bg-green-600 '>Sign In by Google</button>
-        </div>
-        
-           
+            
         </div>
         </div>
-        
     );
 };
 
-export default Login;
+export default SignUp;

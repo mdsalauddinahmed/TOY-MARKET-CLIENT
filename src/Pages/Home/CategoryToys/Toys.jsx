@@ -14,7 +14,7 @@ const Toys = ({toy}) => {
 
           </div>
           <div className="card-actions justify-center">
-            <button className="btn btn-primary">Buy Now</button>
+            <button className="btn bg-green-400 border-0">View Details</button>
           </div>
         </div>
       </div>
