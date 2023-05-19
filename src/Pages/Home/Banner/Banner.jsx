@@ -1,5 +1,5 @@
 import React from 'react';
-import banner from '../../../../../public/banner.webp'
+import banner from  '../../../assets/banner.webp'
 
 const Banner = () => {
     return (
