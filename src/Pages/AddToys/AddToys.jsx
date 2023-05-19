@@ -17,7 +17,23 @@ const AddToys = () => {
       const addToys ={
         photo,toyName,SellerName,email,category,price,rating,quantity,description
       }
-      console.log(addToys)
+    
+ fetch("http://localhost:5000/addToys",{
+    method:"POST",
+    headers:{
+        'content-type':'application/json'
+    },
+    body:JSON.stringify(addToys)
+
+ })
+ .then(res=>res.json())
+ .then(data=>{
+    console.log(data)
+ })
+   
+
+
+
    }
 
 
@@ -70,9 +86,9 @@ const AddToys = () => {
           <div className="form-control">
             <label  className="label">Choose a category:</label>
             <select className="input input-bordered"  name="category">
-              <option value="Collectible Dolls">Collectible Dolls</option>
-              <option value="Interactive Dolls">Interactive Dolls</option>
-              <option value="Fashion Dolls">Fashion Dolls</option>
+              <option value="Collectible_Dolls">Collectible Dolls</option>
+              <option value="Interactive_Dolls">Interactive Dolls</option>
+              <option value="Fashion_Dolls">Fashion Dolls</option>
                
             </select>
           </div>
