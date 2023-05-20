@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const Toys = ({toy}) => {
     // console.log(toy)
@@ -14,7 +15,7 @@ const Toys = ({toy}) => {
 
           </div>
           <div className="card-actions justify-center">
-            <button className="btn bg-green-400 border-0">View Details</button>
+            <button className="btn bg-green-400 border-0"><Link to={`/toys/${_id}`}>View Details</Link></button>
           </div>
         </div>
       </div>
