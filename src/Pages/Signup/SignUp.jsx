@@ -1,9 +1,38 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
+import { AuthContext } from '../../Provider/AuthProvider';
 
 const SignUp = () => {
-    const handleCreateUser =event=>{
+ 
+    const {user,CreateUser }=useContext(AuthContext)
 
+    const handleCreateUser =event=>{
+        event.preventDefault()
+        const form =event.target;
+        const name = form.name.value;
+        const photo = form.photo.value;
+        const email = form.email.value;
+        const password = form.password.value;
+        if(!name || !photo || !email || !password){
+            alert("Must be fill up all input")
+            //  setValue("Must be fill up all input")
+        }
+        if(password.length<6){
+            alert('password atlest six character')
+            // setError("password atleast six character")
+        }
+        event.target.reset();
+         
+        console.log(name,photo,email,password)
+        CreateUser(email, password)
+    .then(result =>{
+        const createdUser = result.user;
+        console.log(createdUser)
+      
+        })
+    .catch(error=>{
+        console.log(error)
+    })
     }
     return (
         

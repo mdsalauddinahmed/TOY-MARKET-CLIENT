@@ -1,6 +1,6 @@
 import React, { createContext, useEffect, useState } from 'react';
 import app from '../Firebase/Firebase.config';
-import {GoogleAuthProvider, createUserWithEmailAndPassword, getAuth, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup} from "firebase/auth";
+import {GoogleAuthProvider, createUserWithEmailAndPassword, getAuth, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup, signOut} from "firebase/auth";
 
 export const AuthContext = createContext(null);
 
@@ -38,7 +38,7 @@ const AuthProvider = ({children}) => {
      },[])
 
      const logOut =()=>{
-        // setReload(true)
+         setReload(true)
         return  signOut(auth)
       }
 

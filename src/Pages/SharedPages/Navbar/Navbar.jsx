@@ -1,8 +1,30 @@
-import React from 'react';
+import React, { useContext, useState } from 'react';
 import { Link } from 'react-router-dom';
 import logo from '../../../../public/logo.png'
+import { AuthContext } from '../../../Provider/AuthProvider';
 
 const Navbar = () => {
+  const {user,logOut}=useContext(AuthContext)
+  const[showName,setShowName]=useState(false)
+
+
+  // show name
+const handleShowName =()=>{
+  setShowName(true)
+}
+
+const handleMouseLeave =()=> {
+  setShowProfileName(false);
+}
+
+  // logout
+
+const handleLogOut=()=>{
+  logOut()
+  .then()
+  .catch(error=>console.log(error))
+}
+
     return (
        < div className='bg-lime-00'>
         <div className="navbar  max-w-7xl mx-auto">
@@ -17,8 +39,8 @@ const Navbar = () => {
               <Link to="/blog">Blog</Link>
               </li>
               <li className='font-bold text-dark'><Link to="/contact">Contact</Link></li>
-           
-          < li className='font-bold text-dark'><Link to="/login">Login</Link></li>
+              < li className='font-bold  text-violet-600'><Link to="/addToys">Add toys</Link></li>
+            < li className='font-bold text-dark'><Link to="/login">Login</Link></li>
             </ul>
           </div>
           <Link to="/">
@@ -32,9 +54,31 @@ const Navbar = () => {
             <Link to="/blog">Blog</Link>
             </li>
             <li className='font-bold text-violet-600'><Link to="/allToys">All Toys</Link></li>
+
+         
+           {
+            user? <>
+              < li className='font-bold  text-violet-600'><Link to="/addToys">Add toys</Link></li>
+              <li className='font-bold  text-violet-600'><Link to="/myToys">My Toys</Link></li>
+              
+            </>:
+             < li className='font-bold  text-violet-600'><Link to="/login">Login</Link></li>
+           }
+              {
+            user && <> <li>
+            
+             <img style={{width:'40px',height:'40px',borderRadius:'50%'}} onMouseEnter={handleShowName} onMouseLeave={handleMouseLeave} src={user?.photoURL} alt="not found"  />
+            //  
+            //  {
+               showName && <span className='text-white'>{user.displayName}</span>
+            }
+            / 
+            </li>
+             <button onClick={handleLogOut}>log Out</button>
+            </>
+          }
           
-          < li className='font-bold  text-violet-600'><Link to="/addToys">Add toys</Link></li>
-          < li className='font-bold  text-violet-600'><Link to="/login">Login</Link></li>
+         
           </ul>
         </div>
         

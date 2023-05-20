@@ -1,36 +1,74 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link } from 'react-router-dom'; 
+import { AuthContext } from '../../Provider/AuthProvider';
  
 
 const Login = () => {
+    const{signIn,logInWithGoogle}=useContext(AuthContext)
     const handleLogin=event=>{
-
+        event.preventDefault()
+        const form= event.target;
+        const email = form.email.value;
+        const  password = form.password.value;
+        // event.reset()
+        console.log(email, password)
+        signIn(email,password)
+        .then(result=>{
+            const loggedUser = result.user;
+            console.log(loggedUser)
+            // navigate( from,{replace:true})
+             // navigate(from,{replace:true})
+        })
+        .catch(error =>{
+              console.log(error)
+        })
     }
+
+//   log in by google
+const handleLogInGoogle=()=>{
+    console.log('clicked')
+     logInWithGoogle()
+    //  navigate( from, {replace:true})
+     .then((result) => {
+      const user = result.user;
+    //    setUser(user);
+      
+      console.log(user);
+    })
+    .catch((error) => {
+      const errorMessage = error.message;
+       console.log(errorMessage)
+      
+    });
+   }
+
+
     return (
         <div className='max-w-7xl mx-auto   '>
             <h2 className='text-center text-4xl font-bold pb-10'>Please,Login now</h2>
          <div className='p-46' > 
              <form onSubmit={handleLogin}>
         
-          <div className="form-control w-[50%] mx-auto py-2">
+             <div className="form-control w-[50%] mx-auto">
             <label className="label">
-              <span className="label-text">Photo</span>
+              <span className="label-text">Email</span>
             </label>
             <input
-              type="text"
-              name="photo"
-              placeholder="Toy photo"
+              type="email"
+              placeholder="Enter  your Email"
+              name="email"
               className="input input-bordered"
             />
-          </div>
+         
+        </div>
           <div className="form-control w-[50%] mx-auto">
             <label className="label">
-              <span className="label-text">Toy Name</span>
+              <span className="label-text">Password</span>
             </label>
             <input
-              type="text"
-              placeholder="Enter Toy Name"
-              name="ToyName"
+              type="password"
+              placeholder="password"
+              name="password"
               className="input input-bordered"
             />
          
@@ -43,7 +81,7 @@ const Login = () => {
         
         </form>
         <div className='w-[15%] mx-auto mb-12'>
-         <button   className='btn bg-lime-600 border-0  '>Sign In by Google</button>
+         <button  onClick={handleLogInGoogle}  className='btn bg-lime-600 border-0  '>Sign In by Google</button>
         </div>
         
            
