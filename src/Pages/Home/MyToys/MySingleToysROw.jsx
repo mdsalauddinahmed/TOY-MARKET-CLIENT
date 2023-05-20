@@ -36,7 +36,7 @@ const MySingleToysROw = ({ toy,handleDelete }) => {
         <td>${price}</td>
         <td>{quantity}</td>
         <td>{SellerName}</td>
-         <td ><span className="bg-indigo-800 btn">update</span></td>
+         <td ><span className="bg-indigo-800 btn"><Link to={`/updateToys/${_id}`}>update</Link></span></td>
         <td>
            
             <Link className="bg-indigo-800 btn " to={`/toys/${_id}`}>View Details</Link>
