@@ -27,6 +27,7 @@ const AllToys = () => {
     {/* head */}
     <thead>
       <tr>
+        <th>Photo</th>
         <th>Toy Name</th>
         <th>Sub-category</th>
         <th>Price</th>

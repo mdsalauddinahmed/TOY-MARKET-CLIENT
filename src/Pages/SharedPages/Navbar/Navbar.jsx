@@ -38,16 +38,36 @@ const handleLogOut=()=>{
               <li className='font-bold text-dark'>
               <Link to="/blog">Blog</Link>
               </li>
-              <li className='font-bold text-dark'><Link to="/contact">Contact</Link></li>
+              <li className='font-bold text-violet-600'><Link to="/allToys">All Toys</Link></li>
+              {
+            user && <>
               < li className='font-bold  text-violet-600'><Link to="/addToys">Add toys</Link></li>
-            < li className='font-bold text-dark'><Link to="/login">Login</Link></li>
+              <li className='font-bold  text-violet-600'><Link to="/myToys">My Toys</Link></li>
+              
+            </>
+             
+           }
+              {
+            user? <> <li>
+            
+             <img   style={{width:'80px',height:'80px',borderRadius:"50%"}} onMouseEnter={handleShowName} onMouseLeave={handleMouseLeave} src={user?.photoURL} alt="not found"  />
+              
+              {
+               showName && <span className=' text-violet-600'>{user.displayName}</span>
+            }
+             
+            </li>
+            <li><button onClick={handleLogOut}>log Out</button></li>
+             
+            </>: < li className='font-bold bg-indigo-800 rounded  '><Link className='btn bg-indigo-800 text-white' to="/login">Login</Link></li>
+          }
             </ul>
           </div>
           <Link to="/">
             <img className='w-16 h-16' src={logo} alt="" />
           </Link>
         </div>
-        <div className="navbar-end hidden lg:flex">
+        <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal px-1">
             <li className='font-bold text-green-800'><Link to="/">Home</Link></li>
             <li className='font-bold text-green-900'>
@@ -57,29 +77,36 @@ const handleLogOut=()=>{
 
          
            {
-            user? <>
+            user && <>
               < li className='font-bold  text-violet-600'><Link to="/addToys">Add toys</Link></li>
               <li className='font-bold  text-violet-600'><Link to="/myToys">My Toys</Link></li>
               
-            </>:
-             < li className='font-bold  text-violet-600'><Link to="/login">Login</Link></li>
-           }
-              {
-            user && <> <li>
-            
-             <img style={{width:'40px',height:'40px',borderRadius:'50%'}} onMouseEnter={handleShowName} onMouseLeave={handleMouseLeave} src={user?.photoURL} alt="not found"  />
-            //  
-            //  {
-               showName && <span className='text-white'>{user.displayName}</span>
-            }
-            / 
-            </li>
-             <button onClick={handleLogOut}>log Out</button>
             </>
-          }
+             
+           }
+             
           
          
           </ul>
+        </div>
+        <div className="navbar-end">
+          <ul className="menu menu-horizontal px-1">
+          {
+            user? <> <li>
+            
+             <img   style={{width:'80px',height:'80px',borderRadius:"50%"}} onMouseEnter={handleShowName} onMouseLeave={handleMouseLeave} src={user?.photoURL} alt="not found"  />
+              
+              {
+               showName && <span className=' text-violet-600'>{user.displayName}</span>
+            }
+             
+            </li>
+             <li className=' btn  text-white mt-6 rounded bg-indigo-800' onClick={handleLogOut}>log Out</li>
+            </>: < li className='font-bold bg-indigo-800 rounded  '><Link className='btn bg-indigo-800 text-white' to="/login">Login</Link></li>
+          }
+       
+          </ul>
+       
         </div>
         
         </div>
