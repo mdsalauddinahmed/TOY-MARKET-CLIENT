@@ -36,14 +36,14 @@ const Login = () => {
          
         </div>
         <div className='form-control mt-10'>
-        <input type="submit"  value="Sign In" className='btn w-[10%] mx-auto bg-lime-600 border-0 ' />
+        <input type="submit"  value="Sign In" className='btn w-[8%] mx-auto bg-lime-600 border-0  ' />
         <p className='text-center'>Didn't have any account Please  <Link className='text-green-400' to='/signUp'>Sign Up</Link></p>
         </div>
        
         
         </form>
         <div className='w-[15%] mx-auto mb-12'>
-         <button   className='btn bg-green-600 '>Sign In by Google</button>
+         <button   className='btn bg-lime-600 border-0  '>Sign In by Google</button>
         </div>
         
            

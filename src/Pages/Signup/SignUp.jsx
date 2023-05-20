@@ -16,30 +16,54 @@ const SignUp = () => {
         
           <div className="form-control w-[50%] mx-auto py-2">
             <label className="label">
-              <span className="label-text">Photo</span>
+              <span className="label-text">Name</span>
             </label>
             <input
               type="text"
-              name="photo"
-              placeholder="Toy photo"
+              name="name"
+              placeholder="Enter your name"
               className="input input-bordered"
             />
           </div>
           <div className="form-control w-[50%] mx-auto">
             <label className="label">
-              <span className="label-text">Toy Name</span>
+              <span className="label-text">Photo</span>
             </label>
             <input
               type="text"
-              placeholder="Enter Toy Name"
-              name="ToyName"
+              placeholder="Enter  Your Image url"
+              name="photo"
               className="input input-bordered"
             />
          
         </div>
-        <div className='form-control mt-10'>
-        <input type="submit"  value="Sign In" className='btn w-[10%] mx-auto bg-lime-600 border-0 ' />
-        <p className='text-center'>Didn't have any account Please  <Link className='text-green-400' to='/signUp'>Sign Up</Link></p>
+          <div className="form-control w-[50%] mx-auto">
+            <label className="label">
+              <span className="label-text">Email</span>
+            </label>
+            <input
+              type="email"
+              placeholder="Enter  your Email"
+              name="email"
+              className="input input-bordered"
+            />
+         
+        </div>
+          <div className="form-control w-[50%] mx-auto">
+            <label className="label">
+              <span className="label-text">Password</span>
+            </label>
+            <input
+              type="password"
+              placeholder="Enter Toy Name"
+              name="password"
+              className="input input-bordered"
+            />
+         
+        </div>
+        <div className='form-control my-10'>
+        <input type="submit"  value="Sign Up" className='btn w-[10%] mx-auto bg-lime-600 border-0 ' />
+        <p className='text-center'> Already have an account,please  <Link className='text-green-400' to='/login'>Sign In</Link></p>
         </div>
        
         
