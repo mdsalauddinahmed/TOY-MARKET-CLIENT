@@ -6,7 +6,7 @@ const SingleToy = ({toy}) => {
     console.log(toy)
     return (
         <>
-      <tr>
+      <tr className='my-6 text-blue'>
         
         <td>
           <div className="avatar">

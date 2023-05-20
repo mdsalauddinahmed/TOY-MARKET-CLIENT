@@ -1,13 +1,13 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-const MySingleToysROw = ({ toy }) => {
+const MySingleToysROw = ({ toy,handleDelete }) => {
   const { SellerName, category, price, quantity, toyName, _id,photo } = toy;
   return (
     < >
       <tr className="">
         <td>
-          <button className="btn btn-square btn-outline">
+          <button onClick={()=>handleDelete(_id)} className="btn btn-square btn-outline">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               className="h-6 w-6"
@@ -36,7 +36,7 @@ const MySingleToysROw = ({ toy }) => {
         <td>${price}</td>
         <td>{quantity}</td>
         <td>{SellerName}</td>
-         <td className="bg-indigo-800 btn mt-10">Update</td>
+         <td ><span className="bg-indigo-800 btn">update</span></td>
         <td>
            
             <Link className="bg-indigo-800 btn " to={`/toys/${_id}`}>View Details</Link>
