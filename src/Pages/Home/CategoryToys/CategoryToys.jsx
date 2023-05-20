@@ -20,15 +20,16 @@ const CategoryToys = () => {
         setActiveTab(tabName);
       };
     return (
-       <div className='my-5'>
+       <div className='my-5 bg-indigo-800'>
          <div className='max-w-7xl mx-auto'>
         <div className=" text-center ">
-        <div className="text-center w-100 mx-auto">
-          <div className="tabs  flex justify-center items-center">
+        <h2 className='text-center text-4xl font-bold py-10 text-white'> We have multiple  categories Baby Doll Toys</h2>
+        <div className="text-center  w-100 mx-auto">
+          <div className="tabs  flex justify-center items-center ">
             <div
               onClick={() => handleTabClick("Collectible_Dolls")}
               className={`tab  tab2   ${
-                activeTab == "Collectible_Dolls" ? "  bg-gray-950 text-black underline underline-offset-8" : ""
+                activeTab == "Collectible_Dolls" ? " font-bold bg-indigo-800 text-black underline underline-offset-8" : ""
               }`}
             >
               Collectible Dolls
@@ -36,7 +37,7 @@ const CategoryToys = () => {
             <div
               onClick={() => handleTabClick("Interactive_Dolls")}
               className={`tab  tab2   ${
-                activeTab == "Interactive_Dolls" ? " bg-gray-950 text-black underline underline-offset-8" : ""
+                activeTab == "Interactive_Dolls" ? " bg-gray-950 font-bold text-black underline underline-offset-8" : ""
               }`}
             >
              Interactive Dolls
@@ -44,7 +45,7 @@ const CategoryToys = () => {
             <div
               onClick={() => handleTabClick("Fashion_Dolls")}
               className={`tab  tab2   ${
-                activeTab == "Fashion_Dolls" ? " bg-gray-950 text-black underline underline-offset-8" : ""
+                activeTab == "Fashion_Dolls" ? " font-bold text-black underline underline-offset-8" : ""
               }`}
             >
               Fashion Dolls
