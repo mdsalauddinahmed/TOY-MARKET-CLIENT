@@ -6,6 +6,8 @@ import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import 'react-tabs/style/react-tabs.css';
 import CategoryToys from '../CategoryToys/CategoryToys';
 import ImageGallery from '../ImageGallery/ImageGallery';
+import Review from '../Review/Review';
+import NewsLetter from '../NewsLetter/NewsLetter';
 
 const Home = () => {
     return (
@@ -13,6 +15,8 @@ const Home = () => {
             <Banner></Banner>
             <ImageGallery></ImageGallery>
              <CategoryToys></CategoryToys>
+             <Review></Review>
+             <NewsLetter></NewsLetter>
         </div>
     );
 };

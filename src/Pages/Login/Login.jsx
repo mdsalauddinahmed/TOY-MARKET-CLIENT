@@ -1,6 +1,7 @@
 import React, { useContext } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom'; 
 import { AuthContext } from '../../Provider/AuthProvider';
+import Swal from 'sweetalert2';
  
 
 const Login = () => {
@@ -20,6 +21,12 @@ const Login = () => {
         .then(result=>{
             const loggedUser = result.user;
             console.log(loggedUser)
+            Swal.fire({
+              title: 'Success!',
+              text: 'Updated successfully !',
+              icon: 'success',
+              confirmButtonText: 'Cool'
+            })
             navigate( from,{replace:true})
               
         })
@@ -35,6 +42,12 @@ const handleLogInGoogle=()=>{
     //  navigate( from, {replace:true})
      .then((result) => {
       const user = result.user;
+      Swal.fire({
+        title: 'Success!',
+        text: ' logged in successfully !',
+        icon: 'success',
+        confirmButtonText: 'Cool'
+      })
     //    setUser(user);
     navigate( from,{replace:true})
       console.log(user);
@@ -73,7 +86,7 @@ const handleLogInGoogle=()=>{
               type="password"
               placeholder="password"
               name="password"
-              className="input input-bordered"
+              className="input input-bordered "
             />
          
         </div>

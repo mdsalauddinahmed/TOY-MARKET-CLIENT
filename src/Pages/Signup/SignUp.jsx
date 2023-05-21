@@ -1,6 +1,7 @@
 import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../../Provider/AuthProvider';
+import Swal from 'sweetalert2';
 
 const SignUp = () => {
  
@@ -28,10 +29,22 @@ const SignUp = () => {
     .then(result =>{
         const createdUser = result.user;
         console.log(createdUser)
+        Swal.fire({
+          title: 'Success!',
+          text: ' logged in successfully !',
+          icon: 'success',
+          confirmButtonText: 'Cool'
+        })
       
         })
     .catch(error=>{
         console.log(error)
+        Swal.fire({
+          title: 'Error!',
+          text: ' logged in successfully !',
+          icon: 'error',
+          confirmButtonText: 'Cool'
+        })
     })
     }
     return (

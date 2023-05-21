@@ -67,7 +67,7 @@ const handleLogOut=()=>{
          <Link to="/">
            <div  className='flex items-center'>
            <img style={{width:'100px',height:'100px',borderRadius:"50%"}}  src={logo} alt="" />
-            <span className='text-4xl font-bold text-indigo-800'>Doll Fantasy Land</span>
+            <span className='text-3xl  lg: visible font-bold text-indigo-800'>Doll Fantasy Land</span>
            </div>
           </Link></div>
          
