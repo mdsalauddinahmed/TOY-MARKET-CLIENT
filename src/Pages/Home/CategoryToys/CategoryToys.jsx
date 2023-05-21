@@ -7,7 +7,7 @@ const CategoryToys = () => {
     const [activeTab, setActiveTab] = useState("Collectible_Dolls");
 
     useEffect(() => {
-        fetch(`http://localhost:5000/allToysByCategory/${activeTab}`)
+        fetch(`https://y-ten-omega.vercel.app/allToysByCategory/${activeTab}`)
           .then((res) => res.json())
           .then((result) => {
             setCategoryToys(result);

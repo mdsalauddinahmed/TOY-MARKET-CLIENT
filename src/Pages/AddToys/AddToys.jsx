@@ -19,7 +19,7 @@ const AddToys = () => {
         photo,toyName,SellerName,email,category,price,rating,quantity,description
       }
     
- fetch("http://localhost:5000/addToys",{
+ fetch("https://y-ten-omega.vercel.app/addToys",{
     method:"POST",
     headers:{
         'content-type':'application/json'

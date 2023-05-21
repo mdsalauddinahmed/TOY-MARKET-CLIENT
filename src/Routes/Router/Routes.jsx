@@ -45,12 +45,12 @@ const router = createBrowserRouter([
         {
             path:'updateToys/:id',
             element:<UpdateToys></UpdateToys>,
-            loader:({params})=>fetch(`http://localhost:5000/myToys/${params.id}`)
+            loader:({params})=>fetch(`https://y-ten-omega.vercel.app/myToys/${params.id}`)
         },
         {
             path:'/toys/:id',
             element:<PrivateRoute><ToyDetails></ToyDetails></PrivateRoute>,
-            loader:({params})=>fetch(`http://localhost:5000/toys/${params.id}`)
+            loader:({params})=>fetch(`https://y-ten-omega.vercel.app/toys/${params.id}`)
              
         }
     ]
