@@ -1,7 +1,10 @@
 import React, { useContext } from "react";
 import { AuthContext } from "../../Provider/AuthProvider";
+import useTitle from "../../Hooks/useTitle";
+import Swal from "sweetalert2";
 
 const AddToys = () => {
+    useTitle('addToys')
   const{user}=useContext(AuthContext)
    const handleAddToys=event=>{
     event.preventDefault()
@@ -30,6 +33,12 @@ const AddToys = () => {
  .then(res=>res.json())
  .then(data=>{
     console.log(data)
+    Swal.fire({
+        title: 'Success!',
+        text: 'Updated successfully !',
+        icon: 'success',
+        confirmButtonText: 'Cool'
+      })
  })
    
 
@@ -41,13 +50,14 @@ const AddToys = () => {
 
 
   return (
-    <div className="max-w-7xl mx-auto">
-        <h1 className="text-4xl my-4 text-green-600 text-center">Add A toy for sell. <br /> Earn money and be happy with Our company</h1>
+   <div className="bg-indigo-800 py-10">
+     <div className="max-w-7xl mx-auto">
+        <h1 className="text-4xl my-4 font-bold  text-center text-white">Add A toy for sell. <br /> Earn money and be happy with Our company</h1>
       <form onSubmit={handleAddToys}>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           <div className="form-control">
             <label className="label">
-              <span className="label-text">Photo</span>
+              <span className="label-text text-white">Photo</span>
             </label>
             <input
               type="text"
@@ -58,7 +68,7 @@ const AddToys = () => {
           </div>
           <div className="form-control">
             <label className="label">
-              <span className="label-text">Toy Name</span>
+              <span className="label-text text-white">Toy Name</span>
             </label>
             <input
               type="text"
@@ -69,7 +79,7 @@ const AddToys = () => {
           </div>
           <div className="form-control">
             <label className="label">
-              <span className="label-text">Seller Name</span>
+              <span className="label-text text-white">Seller Name</span>
             </label>
             <input
               type="text"
@@ -81,12 +91,12 @@ const AddToys = () => {
           </div>
           <div className="form-control">
             <label className="label">
-              <span className="label-text">User Email</span>
+              <span className="label-text text-white">User Email</span>
             </label>
             <input type="email" name="email" defaultValue={user?.email} className="input input-bordered" />
           </div>
           <div className="form-control">
-            <label  className="label">Choose a category:</label>
+            <label  className="label text-white">Choose a category:</label>
             <select className="input input-bordered"  name="category">
               <option value="Collectible_Dolls">Collectible Dolls</option>
               <option value="Interactive_Dolls">Interactive Dolls</option>
@@ -96,19 +106,19 @@ const AddToys = () => {
           </div>
           <div className="form-control">
             <label className="label">
-              <span className="label-text">Price</span>
+              <span className="label-text text-white">Price</span>
             </label>
             <input type="text" name="price" placeholder="price" className="input input-bordered" />
           </div>
           <div className="form-control">
             <label className="label">
-              <span className="label-text">Ratings</span>
+              <span className="label-text text-white">Ratings</span>
             </label>
             <input type="text" name="rating" placeholder="Out of Five" className="input input-bordered" />
           </div>
           <div className="form-control">
             <label className="label">
-              <span className="label-text">Available Quantity</span>
+              <span className="label-text text-white">Available Quantity</span>
             </label>
             <input type="text" name="quantity" placeholder="Out of Five" className="input input-bordered" />
           </div>
@@ -116,7 +126,7 @@ const AddToys = () => {
         </div>
         <div className="form-control">
             <label className="label">
-              <span className="label-text">Description</span>
+              <span className="label-text text-white">Description</span>
             </label>
             <textarea   name="description" rows="4" cols="40" className="input input-bordered"></textarea>
           </div>
@@ -129,6 +139,7 @@ const AddToys = () => {
         </div>
       </form>
     </div>
+   </div>
   );
 };
 

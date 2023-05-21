@@ -8,24 +8,19 @@ const firebaseConfig = {
 
 
    
-  // apiKey:  import.meta.env.TOY_apiKey,
-  // authDomain: import.meta.env.TOY_authDomain ,
-  // projectId:  import.meta.env.TOY_projectId,
-  // storageBucket: import.meta.env.TOY_storageBucket,
-  // messagingSenderId: import.meta.env.TOY_messagingSenderId,
-  // appId:  import.meta.env.  TOY_appId
+  apiKey:  import.meta.env.VITE_TOY_apiKey,
+  authDomain: import.meta.env.VITE_TOY_authDomain ,
+  projectId:  import.meta.env.VITE_TOY_projectId,
+  storageBucket: import.meta.env.VITE_TOY_storageBucket,
+  messagingSenderId: import.meta.env.VITE_TOY_messagingSenderId,
+  appId:  import.meta.env.  VITE_TOY_appId
 
 
 
 
-  apiKey: "AIzaSyCElQLwT5cKUjl6t8qF_u76BH-ikoPszok",
-  authDomain: "toy-doctor.firebaseapp.com",
-  projectId: "toy-doctor",
-  storageBucket: "toy-doctor.appspot.com",
-  messagingSenderId: "25012263193",
-  appId: "1:25012263193:web:ac803dfd792284a29d8d88"
+   
 }
-
+console.log(firebaseConfig)
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 export default app;

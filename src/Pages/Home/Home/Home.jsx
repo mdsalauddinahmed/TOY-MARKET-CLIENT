@@ -8,8 +8,10 @@ import CategoryToys from '../CategoryToys/CategoryToys';
 import ImageGallery from '../ImageGallery/ImageGallery';
 import Review from '../Review/Review';
 import NewsLetter from '../NewsLetter/NewsLetter';
+import useTitle from '../../../Hooks/useTitle';
 
 const Home = () => {
+    useTitle('home')
     return (
         <div>
             <Banner></Banner>

@@ -1,8 +1,10 @@
 import React, { useEffect, useState } from "react";
 import SingleToy from "./SingleToy";
+import useTitle from "../../Hooks/useTitle";
 
 const AllToys = () => {
   const [toys, setToys] = useState([]);
+  useTitle('AllToys')
 
   useEffect(() => {
     fetch("https://y-ten-omega.vercel.app/allToys")

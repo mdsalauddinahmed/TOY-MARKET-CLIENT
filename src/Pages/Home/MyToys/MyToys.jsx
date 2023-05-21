@@ -5,8 +5,10 @@ import { AuthContext } from "../../../Provider/AuthProvider";
  
 import MySingleToysROw from "./MySingleToysROw";
 import Swal from "sweetalert2";
+import useTitle from "../../../Hooks/useTitle";
 
 const MyToys = () => {
+    useTitle('myToys')
   const { user } = useContext(AuthContext);
   const [toys, setToys] = useState([]);
   const url = `http://localhost:5000/myToys?email=${user?.email}`;
