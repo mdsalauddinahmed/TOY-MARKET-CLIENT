@@ -1,6 +1,6 @@
 import React, { useContext, useState } from 'react';
 import { Link } from 'react-router-dom';
-import logo from '../../../../public/logo.png'
+import logo from '../../../assets/logo.jpg'
 import { AuthContext } from '../../../Provider/AuthProvider';
 
 const Navbar = () => {
@@ -63,23 +63,27 @@ const handleLogOut=()=>{
           }
             </ul>
           </div>
-          <Link to="/">
-            <img className='w-16 h-16' src={logo} alt="" />
-          </Link>
-        </div>
+       
+         <Link to="/">
+           <div  className='flex items-center'>
+           <img style={{width:'100px',height:'100px',borderRadius:"50%"}}  src={logo} alt="" />
+            <span className='text-4xl font-bold text-indigo-800'>Doll Fantasy Land</span>
+           </div>
+          </Link></div>
+         
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal px-1">
-            <li className='font-bold text-green-800'><Link to="/">Home</Link></li>
-            <li className='font-bold text-green-900'>
+            <li className='font-bold text-indigo-800'><Link to="/">Home</Link></li>
+            <li className='font-bold text-indigo-800'>
             <Link to="/blog">Blog</Link>
             </li>
-            <li className='font-bold text-violet-600'><Link to="/allToys">All Toys</Link></li>
+            <li className='font-bold text-indigo-800  '><Link to="/allToys">All Toys</Link></li>
 
          
            {
             user && <>
-              < li className='font-bold  text-violet-600'><Link to="/addToys">Add toys</Link></li>
-              <li className='font-bold  text-violet-600'><Link to="/myToys">My Toys</Link></li>
+              < li className='font-bold text-indigo-800  '><Link to="/addToys">Add toys</Link></li>
+              <li className='font-bold text-indigo-800  '><Link to="/myToys">My Toys</Link></li>
               
             </>
              
